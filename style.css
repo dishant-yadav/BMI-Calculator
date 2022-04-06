@@ -92,7 +92,7 @@ button:hover {
 @media (max-width:704px) {
   #buttons{
     display: flex;
-    gap: 20px;
+    gap: 10px;
   }
   #btns{
     display: flex;
