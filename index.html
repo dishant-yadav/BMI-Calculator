@@ -9,26 +9,44 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <span id="heading">
-      <h3>BMI Calculator</h3>
-    </span>
-    
-
     <div id="content">
+      <span id="heading">
+        <h3 class="text">BMI Calculator</h3>
+      </span>
+      <div id="input">
+        <legend>
           <label for="height" class="text">Height : </label>
-          <input type="number" id="height" class="number" required value="180" /> CM
-      <p id="h-error"></p>
-      <label for="weight" class="text">Weight : </label>
-      <input type="number" id="weight" class="number" required value="60" default="45"/> KG
-      <p id="w-error"></p>
-      <button class="text" onclick="calculate()" >Calculate</button><br />
-      <div id="copy" class="final">
-        <span id="result">18.5</span> 
-        <span id="category">Normal</span>
+          <input
+            type="number"
+            id="height"
+            class="number"
+            required
+            value="180"
+          />
+        </legend>
+        <legend>
+          <label for="weight" class="text">Weight : </label>
+          <input
+            type="number"
+            id="weight"
+            class="number"
+            required
+            value="60"
+            default="45"
+          />
+        </legend>
+        <div class="result text">
+          <span id="bmi">18.5</span>
+          <span id="category">Normal</span>
+        </div>
       </div>
+      
       <div id="buttons">
-        <button id="copy" onclick="copy()">COPY</button>
-        <button onclick="reset()">RESET</button>
+        <button class="text" onclick="calculate()">Calculate</button>
+        <div id="btns">
+        <button class="text" onclick="copy()">COPY</button>
+        <button class="text" onclick="reset()">clear</button>
+        </div>
       </div>
     </div>
   </body>

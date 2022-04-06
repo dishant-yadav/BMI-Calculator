@@ -1,18 +1,13 @@
-let m = 18.5,
-  cat = "normal".toUpperCase();
-let result = document.getElementById("result");
-let category = document.getElementById("category");
+let m = 18.5;
+let cat = "normal".toUpperCase();
 function calculate() {
-  let herror = document.getElementById("h-error");
-  let hstatus = true;
-  let werror = document.getElementById("w-error");
-  let wstatus = true;
+  let result = document.getElementById("bmi");
+  let category = document.getElementById("category");
   let height = document.getElementById("height").value;
   let weight = document.getElementById("weight").value;
   let currentCategory = "";
-  if (weight >= 10 && height >= 50) {
+  if (weight >= 5 && height >= 45) {
     let bmi = (weight / Math.pow(height / 100, 2)).toFixed(1);
-    result.textContent = bmi;
     if (bmi <= 18.4) {
       currentCategory = "underweight";
       category.style.color = "darkorange";
@@ -35,23 +30,29 @@ function calculate() {
       category.style.color = "darkred";
       result.style.color = "darkred";
     }
-    category.textContent = currentCategory;
+    result.textContent = bmi;
+    category.textContent = currentCategory.toUpperCase();
     cat = currentCategory;
     m = bmi;
+    console.log(bmi);
+    console.log(height + " " + weight);
   }
 }
 
+let copyText = "BMI : " + m + "\nCategory : " + cat.toUpperCase();
+
 function copy() {
-  navigator.clipboard.writeText("BMI : " + m + "\nCategory : " + cat.toUpperCase());
+  navigator.clipboard.writeText(copyText);
 }
 
 function reset() {
-  height.value = 180;
-  weight.value = 60;
-  result.textContent = "18.5";
-  category.textContent = "Normal".toUpperCase();
+  height.value = "";
+  weight.value = "";
+  result.textContent = "";
+  category.textContent = "Input Height and Weight to calculate BMI";
   category.style.color = "darkgreen";
   result.style.color = "darkgreen";
+  copyText = "";
 }
 
 if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
