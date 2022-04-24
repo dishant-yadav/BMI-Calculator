@@ -1,5 +1,5 @@
 let m = 18.5;
-let cat = "normal".toUpperCase();
+let cat = "NORMAL";
 function calculate() {
   let result = document.getElementById("bmi");
   let category = document.getElementById("category");
@@ -48,15 +48,13 @@ function copy() {
 function reset() {
   height.value = "";
   weight.value = "";
-  result.textContent = "";
-  category.textContent = "Input Height and Weight to calculate BMI";
-  category.style.color = "darkgreen";
-  result.style.color = "darkgreen";
+  cat.value = "";
+  m.value = "";
   copyText = "";
 }
+// checking for reload
 
 if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
   height.value = 180;
   weight.value = 60;
 }
-// checking for reload
