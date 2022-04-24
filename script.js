@@ -48,8 +48,6 @@ function copy() {
 function reset() {
   height.value = "";
   weight.value = "";
-  cat.value = "";
-  m.value = "";
   copyText = "";
 }
 // checking for reload
